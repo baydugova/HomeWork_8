@@ -23,26 +23,31 @@ def work_with_phonebook():
             last_name = input('Введите фамилию: ')
             print(find_by_lastname(phone_book, last_name))
         elif choice == 3:
-            number = input('Введите номер: ')
-            print(find_by_number(phone_book, number))
-        elif choice == 4:
-            user_data = input('Введите новые данные: ')
-            add_user(phone_book, user_data)
-            write_txt('phonebook.txt', phone_book)
-        elif choice == 5:
+                number = input('Введите номер: ')
+                print(find_by_number(phone_book, number))
+                
+        elif choice == 4:  # Изменить номер телефона
+                last_name = input('Введите фамилию: ')
+                new_number = input('Введите новый номер: ')
+                print(change_number(phone_book, last_name, new_number))
+                write_txt('phonebook.txt', phone_book)
+
+        elif choice == 5: # Изменить описание
                 last_name = input('Введите фамилию: ')
                 new_description = input('Введите новое описание: ')
                 print(change_description(phone_book, last_name, new_description))
                 write_txt('phonebook.txt', phone_book)  
 
-        elif choice == 6:
-            last_name = input('Введите фамилию: ')
-            print(delete_by_lastname(phone_book, last_name))
-            write_txt('phonebook.txt', phone_book)
-        elif choice == 7:
+        elif choice == 6: # Удаление по фамилии
+                last_name = input('Введите фамилию: ')
+                print(delete_by_lastname(phone_book, last_name))
+                write_txt('phonebook.txt', phone_book)
+
+        elif choice == 7: # Удалить по номеру
                 number = input('Введите номер: ')
                 print(delete_by_number(phone_book, number))
-        elif choice == 8:
+
+        elif choice == 8: # Добавить абонента
             last_name = input('Введите фамилию: ')
             first_name = input('Введите имя: ')
             phone = input('Введите номер телефона: ')
