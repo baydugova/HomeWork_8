@@ -18,14 +18,14 @@ def work_with_phonebook():
 
     while choice != 9:
         if choice == 1:
-            print_result(phone_book)
+                print_result(phone_book)
         elif choice == 2:
-            last_name = input('Введите фамилию: ')
-            print(find_by_lastname(phone_book, last_name))
+                last_name = input('Введите фамилию: ')
+                print(find_by_lastname(phone_book, last_name))
         elif choice == 3:
                 number = input('Введите номер: ')
                 print(find_by_number(phone_book, number))
-                
+
         elif choice == 4:  # Изменить номер телефона
                 last_name = input('Введите фамилию: ')
                 new_number = input('Введите новый номер: ')
@@ -48,14 +48,14 @@ def work_with_phonebook():
                 print(delete_by_number(phone_book, number))
 
         elif choice == 8: # Добавить абонента
-            last_name = input('Введите фамилию: ')
-            first_name = input('Введите имя: ')
-            phone = input('Введите номер телефона: ')
-            description = input('Введите описание: ')
-            new_user_data = f'{last_name}, {first_name}, {phone}, {description}'
-            new_record = dict(zip(['Фамилия', 'Имя', 'Телефон', 'Описание'], new_user_data.split(', ')))
-            phone_book.append(new_record)
-            write_txt('phonebook.txt', phone_book)
+                last_name = input('Введите фамилию: ')
+                first_name = input('Введите имя: ')
+                phone = input('Введите номер телефона: ')
+                description = input('Введите описание: ')
+                new_user_data = f'{last_name}, {first_name}, {phone}, {description}'
+                new_record = dict(zip(['Фамилия', 'Имя', 'Телефон', 'Описание'], new_user_data.split(', ')))
+                phone_book.append(new_record)
+                write_txt('phonebook.txt', phone_book)
 
         choice = show_menu()
 
