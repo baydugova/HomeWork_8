@@ -39,6 +39,7 @@ def change_number(phone_book, last_name, new_number):
     return "Абонент с указанной фамилией не найден."
 
 
+
 def delete_by_lastname(phone_book, last_name):
     for record in phone_book:
         if record['Фамилия'] == last_name:
